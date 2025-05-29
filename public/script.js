@@ -1,3 +1,8 @@
+//max's drawings new website
+//old website previously got 2777 views, this website will continue off the previous website's analytics. New data of countries viewership is reset, stored again after may 28, 2025.
+//EST: may 28, 2025
+//maxhzhang119@gmail.com
+
 const firebaseConfig = {
     apiKey: "AIzaSyAFhA7V3W43vNEjmbLvVYoQPwT9ghBgfrI",
     authDomain: "maxsdrawingssite.firebaseapp.com",
