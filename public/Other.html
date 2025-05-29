@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css"> <title>Max's Drawings - Other</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-database-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-functions-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-messaging-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-storage-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-remote-config-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-performance-compat.js"></script>
+</head>
+<body>
+
+    <header id="siteheader">
+        <a href="index.html" id="siteheader-title" onclick="transitionToPage('index.html'); return false;">
+            <img id="logoimg" src="images/logo.png" alt="Max's Drawings Logo">
+        </a>
+        <nav id="siteheader-content">
+            <a onclick="transitionToPage('index.html')">Overview</a>
+            <a onclick="transitionToPage('People.html')">People</a>
+            <a onclick="transitionToPage('Ipad.html')">iPad</a>
+            <a onclick="transitionToPage('Other.html')">Other</a> 
+            <a onclick="transitionToPage('aboutus.html')">About Me</a>
+            <a onclick="handleAuth()" class="login">Login</a>
+        </nav>
+        <div id="dropdiv" class="dropdown">
+            <div id="menu-toggle" onclick="toggleMenu()">
+                <div class="bar" id="bar1"></div>
+                <div class="bar" id="bar2"></div>
+                <div class="bar" id="bar3"></div>
+            </div>
+            <nav id="dropdown-menu">
+                <a onclick="transitionToPage('index.html')">Overview</a>
+                <a onclick="transitionToPage('People.html')">People</a>
+                <a onclick="transitionToPage('Ipad.html')">iPad</a>
+                <a onclick="transitionToPage('Other.html')">Other</a> <a onclick="transitionToPage('aboutus.html')">About Me</a>
+           
+                <a onclick="handleAuth()" class="login">Login</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="page-title-section">
+            <h1>Other Art</h1>
+            <p>A collection of various other drawings and artistic experiments.</p>
+            <div class="line-divider"></div>
+        </section>
+
+        <section class="drawing-list">
+
+            <article class="drawing-item">
+                <div class="drawing-info">
+                    <h2>Islamic Art Design</h2>
+                    <p class="drawing-date">Date: September 23, 2024</p>
+                    <p>Mr. Einfeldt I would appreciate the one point of extra credit please.</p>
+                </div>
+                <div class="image-container">
+                    <img class="clickable" src="images/other6.jpg" alt="Islamic art design">
+                </div>
+            </article>
+
+            <article class="drawing-item item-reverse">
+                <div class="drawing-info">
+                    <h2>Abstract - Guy Eating Guy Eating Earth</h2>
+                    <p class="drawing-date">Date: 2022?</p>
+                    <p>I drew this with my friends at school with marker. Visual arts elective, abstract.</p>
+                </div>
+               <div class="image-container">
+                    <img class="clickable" src="images/other1.jpg" alt="Abstract drawing of a person eating a person eating Earth">
+                 </div>
+            </article>
+
+            <article class="drawing-item">
+                <div class="drawing-info">
+                    <h2>Max's Pizza</h2>
+                    <p class="drawing-date">Date: 2021</p>
+                    <p>A visual arts elective I had for a few months in 7th grade.</p>
+                </div>
+                <div class="image-container">
+                    <img class="clickable" src="images/other2.jpg" alt="Drawing of a pizza slice with face">
+                </div>
+            </article>
+
+            <article class="drawing-item item-reverse">
+                <div class="drawing-info">
+                    <h2>I'm Dizzy</h2>
+                    <p class="drawing-date">Date: idk</p>
+                    <p>Cool circles, nice pattern I guess.</p>
+                </div>
+               <div class="image-container">
+                    <img class="clickable" src="images/other3.jpg" alt="Abstract circular pattern drawing">
+                 </div>
+            </article>
+
+
+        </section> <div id="fullpage" onclick="this.style.display='none';"></div>
+
+    </main>
+
+    <footer id="sitefooter">
+        <p>&copy; <span id="copyright-year"></span> Max's Drawings. All Rights Reserved.</p>
+        
+        <p>Contact: <a href="mailto:maxhzhang119@gmail.com">maxhzhang119@gmail.com</a>
+            <a href="https://www.instagram.com/maxzhang19/" aria-label="Follow me on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/maxh119Z" aria-label="Check out my GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/max.zhang.760398/" aria-label="See me on Facebook"><i class="fab fa-facebook"></i></a>
+        </p>
+    </footer>
+    <script defer src="script.js"></script>
+    <script>
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+        if (typeof transitionToPage !== 'function') { 
+            function transitionToPage(url) {
+                document.body.style.opacity = '0'; setTimeout(() => { window.location.href = url; }, 200);
+            } 
+        }
+        if (typeof toggleMenu !== 'function') { 
+            function toggleMenu() { const m = document.getElementById('menu-toggle'), d = document.getElementById('dropdown-menu'); m.classList.toggle('open'); d.style.display = m.classList.contains('open') ? 'flex' : 'none'; const b = m.querySelectorAll('.bar'); b.forEach(e => e.classList.add('no-transition')); setTimeout(() => { b.forEach(e => e.classList.remove('no-transition')); 
+
+            }, 10); 
+        } }
+        const cI = document.querySelectorAll('.clickable'), fO = document.getElementById('fullpage'); if (fO) { cI.forEach(i => { i.addEventListener('click', function() { fO.style.backgroundImage = 'url(' + this.src + ')'; fO.style.display = 'block'; }); }); }
+        document.addEventListener('DOMContentLoaded', () => { document.body.style.opacity = '1'; });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css"> <title>Max's Drawings</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-database-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-functions-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-messaging-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-storage-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-remote-config-compat.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/11.2.0/firebase-performance-compat.js"></script>
+</head>
+<body>
+
+    <header id="siteheader">
+        <a href="index.html" id="siteheader-title" onclick="transitionToPage('index.html'); return false;">
+            <img id="logoimg" src="images/logo.png" alt="Max's Drawings Logo">
+        </a>
+        <nav id="siteheader-content">
+            <a onclick="transitionToPage('index.html')">Overview</a>
+            <a onclick="transitionToPage('People.html')">People</a>
+            <a onclick="transitionToPage('Ipad.html')">Ipad</a>
+            <a onclick="transitionToPage('Other.html')">Other</a>
+            <a onclick="transitionToPage('aboutus.html')">About Me</a>
+            <a onclick="handleAuth()" class="login">Login</a>
+        </nav>
+        <div id="dropdiv" class="dropdown">
+            <div id="menu-toggle" onclick="toggleMenu()">
+                <div class="bar" id="bar1"></div>
+                <div class="bar" id="bar2"></div>
+                <div class="bar" id="bar3"></div>
+            </div>
+            <nav id="dropdown-menu">
+              <a onclick="transitionToPage('index.html')">Overview</a>
+              <a onclick="transitionToPage('People.html')">People</a>
+              <a onclick="transitionToPage('Ipad.html')">Ipad</a>
+              <a onclick="transitionToPage('Other.html')">Other</a>
+              <a onclick="transitionToPage('aboutus.html')">About Me</a>
+              <a onclick="handleAuth()" class="login">Login</a>
+            
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div id="TITLE">
+                <h1>Max's Drawings</h1>
+            </div>
+            <div class="line-divider"></div>
+            <div id="titledescription">
+                <h2>A showcase of drawings from Summer 2024 and beyond :)</h2>
+            </div>
+        </section>
+
+        <section id="overview">
+             <div class="image-container overview-image">
+                 <img src="images/npeople2.jpg" alt="Featured recent drawing" id="overviewpicture" onclick="transitionToPage('People.html')">
+                 <div class="image-caption">Recent Work</div>
+             </div>
+             <div id="overview-text">
+                 <p id="text1">
+                     Welcome to Max's Drawings! Here you'll find a collection of my artwork, created over time. Drawing is a fun hobby, alongside coding, which inspired this site (built with HTML, CSS, JS, and Firebase. There are people, iPad, and other drawings. I hope you enjoy the Browse! <b>Let me know what you think or report problems using the <a href = "aboutus.html"><u>form</u></a> in the ABOUT Me section.</b> Also, if you would like your own website, <u>hit me up</u>. The drawings you find on this website are usually the best ones. I sketch a lot but many of those sketches are not good enough to post here.
+                 </p>
+             </div>
+        </section>
+
+        <div class="line-divider"></div>
+
+        <section id="category-gallery">
+             <h2>Categories</h2>
+             <div class="gallery-grid">
+                <div class="image-container card">
+                    <img src="images/person1.jpg" alt="Drawing of a person looking sideways" class="indexpics" onclick="transitionToPage('People.html')">
+                    <div class="image-caption">People</div>
+                </div>
+                <div class="image-container card">
+                    <img src="images/ipad1.jpg" alt="Drawing of the Boy and the Heron wallpaper" class="indexpics" onclick="transitionToPage('Ipad.html')">
+                    <div class="image-caption">iPad Draws</div>
+                </div>
+                <div class="image-container card">
+                    <img src="images/other1.jpg" alt="Abstract colorful drawing" class="indexpics" onclick="transitionToPage('Other.html')">
+                    <div class="image-caption">Other Stuff</div>
+                </div>
+                <div class="image-container card">
+                    <img src="images/maxpicture.jpg" alt="Picture of Max, the artist" class="indexpics" onclick="transitionToPage('aboutus.html')">
+                    <div class="image-caption">About Me</div>
+                </div>
+             </div>
+        </section>
+    </main>
+
+    <footer id="sitefooter">
+        <p>&copy; <span id="copyright-year"></span> Max's Drawings. All Rights Reserved.</p>
+        
+        <p>Contact: <a href="mailto:maxhzhang119@gmail.com">maxhzhang119@gmail.com</a>
+            <a href="https://www.instagram.com/maxzhang19/" aria-label="Follow me on Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/maxh119Z" aria-label="Check out my GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.facebook.com/max.zhang.760398/" aria-label="See me on Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@maxcodes1" aria-label="Youtbue"><i class="fab fa-youtube"></i></a>
+        </p>
+    </footer>
+
+    <script defer src="script.js"></script>
+
+</body>
+</html>
