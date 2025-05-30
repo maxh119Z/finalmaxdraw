@@ -265,7 +265,7 @@ img {
 
 #overview .image-container {
     position: relative;
-    width: clamp(280px, 40vw, 400px);
+    width: clamp(280px, 30%, 400px);
     aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 12px;
@@ -308,7 +308,7 @@ img {
 
 #overview-text {
     flex-grow: 1;
-    max-width: 650px;
+    max-width: 60%;
 }
 
 #overview-text #text1 {
@@ -562,11 +562,12 @@ img {
     flex-direction: row; /* Explicitly ensure it's a row or relies on default */
     align-items: flex-start; /* Aligns image and text to the top; use 'center' if you prefer vertical centering */
     gap: 30px; /* You can adjust the gap between image and text if needed */
+    display:flex;
 }
 
 #overview .image-container {
     /* Adjust width for side-by-side layout on medium screens. Default was clamp(280px, 40vw, 400px) */
-    width: clamp(260px, 38vw, 380px); /* Slightly adjusted to provide balance */
+    width: clamp(260px, 30%, 380px); /* Slightly adjusted to provide balance */
     /* flex-shrink: 0; should already be on your default .image-container style, which is good */
 }
 
@@ -575,6 +576,7 @@ img {
     /* Ensure text alignment is left, as it is in your screenshot for desktop */
     text-align: left;
     margin-top: 0; /* Remove any top margin that might have been for stacked layout */
+    max-width: 60%;
 }
 }
 
@@ -669,7 +671,7 @@ img {
 }
 
 #overview-text {
-    max-width: 100%; /* Text container can now use the full width */
+    max-width: 60%; /* Text container can now use the full width */
     margin-top: 20px; /* Add some space above the text when stacked below the image */
     text-align: left; /* Keeps your paragraph text left-aligned */
 }
