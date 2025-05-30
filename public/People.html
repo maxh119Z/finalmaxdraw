@@ -155,13 +155,7 @@
         <script>
 
            
-            if (typeof transitionToPage !== 'function') {
-                 function transitionToPage(url) {
-                    console.log('Transitioning to:', url);
-                     document.body.style.opacity = '0';
-                     setTimeout(() => { window.location.href = url; }, 200);
-                 }
-             }
+
              if (typeof handleAuth !== 'function') {
                  function handleAuth() { console.log('handleAuth called'); alert('Login functionality not implemented yet.'); }
              }

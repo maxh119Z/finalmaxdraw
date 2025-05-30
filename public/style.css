@@ -1,5 +1,5 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@400;600&family=Nunito:wght@300;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +25,7 @@ body {
 
 main {
     flex-grow: 1;
-    padding: 0 20px;
+    padding: 0 20px; /* Default padding, will be overridden by breakpoints */
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
@@ -57,7 +57,6 @@ p {
 }
 
 a {
-
     color: #4a4e69;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -74,6 +73,7 @@ img {
     display: block;
 }
 
+/* Header Styles */
 #siteheader {
     position: sticky;
     top: 0;
@@ -134,11 +134,11 @@ img {
 #siteheader-content a.active::after {
     width: 100%;
 }
+
 #siteheader-content a.active {
     font-weight: 600;
     color: #ffffff;
 }
-
 
 #siteheader-content a.login {
     background-color: rgba(255, 255, 255, 0.2);
@@ -152,15 +152,16 @@ img {
     background-color: rgba(255, 255, 255, 0.4);
     color: #ffffff;
 }
+
 #siteheader-content a.login::after {
-    display: none;
+    display: none; /* No underline for login button */
 }
 
+/* Hamburger Menu Styles */
 #dropdiv {
-    display: none;
+    display: none; /* Hidden by default, shown on smaller screens */
     position: relative;
-    opacity: 1;
-    margin-left: auto;
+    margin-left: auto; /* Pushes hamburger to the right */
 }
 
 #menu-toggle {
@@ -170,8 +171,8 @@ img {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 1001;
-    padding: 2px 0;
+    z-index: 1001; /* Above dropdown background */
+    padding: 2px 0; /* Small padding for visual balance */
 }
 
 .bar {
@@ -188,28 +189,27 @@ img {
 
 #menu-toggle.open #bar2 {
     opacity: 0;
-    /* transform: translateX(-100%); */
 }
 
 #menu-toggle.open #bar3 {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.no-transition {
+.no-transition { /* Utility class to disable transitions temporarily */
     transition: none !important;
 }
 
 #dropdown-menu {
-    display: none;
+    display: none; /* Hidden by default */
     flex-direction: column;
     position: absolute;
-    top: calc(100% + 10px);
+    top: calc(100% + 10px); /* Position below hamburger icon */
     right: 0;
     background-color: #ffffff;
     padding: 15px 25px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-    z-index: 1000;
+    z-index: 1000; /* Ensure it's above other content */
     min-width: 200px;
 }
 
@@ -219,6 +219,7 @@ img {
     font-size: 1.1rem;
     padding: 5px 0;
 }
+
 #dropdown-menu a.active {
     font-weight: 600;
     color: #4a4e69;
@@ -229,6 +230,7 @@ img {
     color: #6b7a8f;
 }
 
+/* Hero Section */
 #hero {
     text-align: center;
     padding: 40px 0;
@@ -248,13 +250,14 @@ img {
 }
 
 #hero #titledescription h2 {
-    font-size: 1.4rem;
+    font-size: 1.4rem; /* Specific size for hero subtitle */
     font-weight: 400;
     color: #6c757d;
     margin-top: 0;
     margin-bottom: 30px;
 }
 
+/* Overview Section */
 #overview {
     display: flex;
     flex-wrap: wrap;
@@ -267,12 +270,12 @@ img {
 #overview .image-container {
     position: relative;
     width: clamp(280px, 40vw, 400px);
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevent shrinking if text is long */
 }
 
 #overview .image-container img {
@@ -287,6 +290,7 @@ img {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
+
 #overview .image-container:hover img {
     transform: scale(1.05);
 }
@@ -308,7 +312,7 @@ img {
 
 #overview-text {
     flex-grow: 1;
-    max-width: 650px;
+    max-width: 650px; /* Prevents text line from becoming too long */
 }
 
 #overview-text #text1 {
@@ -316,6 +320,7 @@ img {
     color: #495057;
 }
 
+/* Category Gallery Section */
 #category-gallery {
     padding: 30px 0;
     margin-bottom: 50px;
@@ -333,7 +338,7 @@ img {
 
 #category-gallery .image-container.card {
     position: relative;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 3 / 4; /* Portrait aspect ratio for cards */
     overflow: hidden;
     border-radius: 10px;
     background: #fff;
@@ -353,10 +358,12 @@ img {
     transform: translateY(-8px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
+
 #category-gallery .image-container.card:hover img {
     transform: scale(1.05);
 }
 
+/* Page Title Section (for category pages, etc.) */
 .page-title-section {
     text-align: center;
     padding: 40px 0 20px;
@@ -377,6 +384,7 @@ img {
     margin-bottom: 1.5em;
 }
 
+/* Drawing List (for category pages) */
 .drawing-list {
     display: flex;
     flex-direction: column;
@@ -386,23 +394,23 @@ img {
 
 .drawing-item {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping on very narrow screens if needed */
     align-items: center;
     gap: 30px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
+    overflow: hidden; /* Contain box shadow */
 }
 
-.drawing-item.item-reverse {
+.drawing-item.item-reverse { /* For alternating layout */
     flex-direction: row-reverse;
 }
 
 .drawing-info {
-    flex: 1;
-    min-width: 250px;
+    flex: 1; /* Takes available space */
+    min-width: 250px; /* Minimum width before wrapping or shrinking too much */
     padding: 10px;
 }
 
@@ -411,7 +419,7 @@ img {
     color: #4a4e69;
     margin-top: 0;
     margin-bottom: 0.5em;
-    text-align: left;
+    text-align: left; /* Default to left */
 }
 
 .drawing-info p {
@@ -419,7 +427,7 @@ img {
     color: #495057;
     line-height: 1.6;
     margin-bottom: 0.8em;
-    text-align: left;
+    text-align: left; /* Default to left */
 }
 
 .drawing-date {
@@ -430,9 +438,9 @@ img {
 }
 
 .drawing-item .image-container {
-    flex: 1;
-    min-width: 250px;
-    max-width: 500px;
+    flex: 1; /* Takes available space */
+    min-width: 250px; /* Minimum width */
+    max-width: 500px; /* Max width for the image */
     position: relative;
     border-radius: 8px;
     overflow: hidden;
@@ -441,9 +449,9 @@ img {
 
 .drawing-item .image-container img {
     width: 100%;
-    height: auto;
+    height: auto; /* Maintain aspect ratio */
     display: block;
-    border-radius: 8px;
+    border-radius: 8px; /* Match container's radius */
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -452,15 +460,16 @@ img {
    transform: scale(1.03);
 }
 
-.about-content {
+/* About Me Section */
+.about-content { /* Container for about me items if there are multiple */
     display: flex;
     flex-direction: column;
     gap: 40px;
     margin-bottom: 60px;
 }
 
-.about-me-item {
-
+.about-me-item { /* Reuses some drawing-item structure but can be customized */
+    /* Similar to .drawing-item, can add specific styles if needed */
 }
 
 .about-me-item .drawing-info h2 {
@@ -473,23 +482,23 @@ img {
     text-align: left;
 }
 
-.about-me-item .image-container {
-    max-height: 400px;
-    align-self: center;
+.about-me-item .image-container { /* Specific for about me page image */
+    max-height: 400px; /* Constrain height */
+    align-self: center; /* Center if layout becomes column */
 }
 
 .about-me-item .image-container img {
-    object-fit: cover;
-    max-height: 400px;
+    object-fit: cover; /* Cover the constrained area */
+    max-height: 400px; /* Ensure img respects container height */
 }
 
-
+/* Footer */
 #sitefooter {
     background-color: #343a40;
     color: #adb5bd;
     padding: 30px 20px;
     text-align: center;
-    margin-top: auto;
+    margin-top: auto; /* Pushes footer to bottom if content is short */
     font-size: 0.9rem;
     width: 100%;
 }
@@ -498,6 +507,7 @@ img {
     margin-bottom: 0.5em;
     color: inherit;
 }
+
 #sitefooter p:last-child {
     margin-bottom: 0;
 }
@@ -512,6 +522,7 @@ img {
     color: #ffffff;
 }
 
+/* Full Page Image Viewer */
 #fullpage {
     position: fixed;
     top: 0;
@@ -522,14 +533,17 @@ img {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    display: none;
-    z-index: 2000;
+    display: none; /* Shown via JavaScript */
+    z-index: 2000; /* Above everything else */
     cursor: pointer;
 }
 
+/* Media Queries for Responsiveness */
+
+/* Larger Tablets and Small Desktops (e.g., iPad landscape, smaller laptops) */
 @media (max-width: 992px) {
     main {
-        padding: 0 25px;
+        padding: 0 25px; /* Slightly reduced padding */
     }
     h1 { font-size: 2.5rem; }
     .page-title-section h1 { font-size: 2.3rem; }
@@ -537,88 +551,109 @@ img {
     .drawing-info h2 { font-size: 1.5rem; }
     .about-me-item .drawing-info h2 { font-size: 1.7rem; }
 
+    /* Header adjustments for this breakpoint for better fit */
+    #siteheader {
+        padding: 0 20px;
+        height: 70px;
+    }
+    #siteheader-title {
+        font-size: 1.4rem; /* Slightly smaller title */
+        gap: 8px;
+    }
+    #logoimg {
+        height: 50px; /* Slightly smaller logo */
+    }
+    #siteheader-content {
+        gap: 20px; /* Reduce gap between nav items */
+    }
+    #siteheader-content a {
+        font-size: 1rem; /* Slightly smaller nav links */
+    }
+    #siteheader-content a.login {
+        padding: 7px 12px; /* Adjust login button padding */
+    }
 
     #overview {
-        flex-direction: column;
+        flex-direction: column; /* Stack image and text */
         text-align: center;
     }
     #overview .image-container {
-        width: clamp(280px, 60vw, 450px);
+        width: clamp(280px, 60vw, 450px); /* Adjust image size for stacked layout */
     }
     #overview-text {
-        max-width: 100%;
+        max-width: 100%; /* Allow text to use full width when stacked */
         margin-top: 20px;
     }
 }
 
+/* Standard Tablets (e.g., iPad portrait) */
 @media (max-width: 768px) {
     body {
-        line-height: 1.6;
+        line-height: 1.6; /* Slightly adjust line height for smaller screens */
     }
     main {
-        padding: 0 20px;
+        padding: 0 20px; /* Further reduce padding */
     }
-    h1 { font-size: 2rem; }
-    .page-title-section h1 { font-size: 1.8rem; }
+    h1 { font-size: 2.2rem; } /* Further reduce font sizes */
+    .page-title-section h1 { font-size: 2rem; }
     h2 { font-size: 1.5rem; }
     .drawing-info h2 { font-size: 1.4rem; }
     .about-me-item .drawing-info h2 { font-size: 1.5rem; }
 
-
     #siteheader {
-        padding: 0 20px;
-        height: 65px;
+        padding: 0 20px; /* Consistent with 992px or further adjust if needed */
+        height: 65px; /* Reduce header height */
     }
     #logoimg {
-        height: 50px;
+        height: 45px; /* Smaller logo */
     }
 
     #siteheader-content {
-        display: none;
+        display: none; /* Hide full navigation */
     }
     #dropdiv {
-        display: flex;
+        display: flex; /* Show hamburger menu icon */
         align-items: center;
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Smaller grid items */
         gap: 20px;
     }
     #category-gallery .image-container.card {
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 1 / 1; /* Square cards for smaller screens */
     }
 
     .drawing-list {
-        gap: 40px;
+        gap: 40px; /* Reduce gap between drawing items */
     }
     .drawing-item,
     .drawing-item.item-reverse {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: column; /* Stack image and text */
+        align-items: stretch; /* Make items take full width */
         padding: 15px;
     }
-     .drawing-item .image-container,
-     .drawing-item.item-reverse .image-container {
-        order: -1;
-        max-width: 100%;
+    .drawing-item .image-container,
+    .drawing-item.item-reverse .image-container {
+        order: -1; /* Image on top */
+        max-width: 100%; /* Image takes full width of its container */
         margin-bottom: 20px;
     }
     .drawing-info {
-         text-align: center;
+        text-align: center; /* Center text content */
     }
-     .drawing-info h2, .drawing-info p, .drawing-date {
-        text-align: center;
+    .drawing-info h2, .drawing-info p, .drawing-date {
+        text-align: center; /* Ensure all text inside info is centered */
     }
 
-    .about-me-item,
+    .about-me-item, /* Also stack for about me section */
     .about-me-item.item-reverse {
         flex-direction: column;
         align-items: stretch;
     }
     .about-me-item .image-container {
         order: -1;
-        max-width: 70%;
+        max-width: 70%; /* Image slightly smaller than full width, centered */
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
@@ -629,12 +664,29 @@ img {
     .about-me-item .drawing-info h2, .about-me-item .drawing-info p {
         text-align: center;
     }
-
 }
 
+/* Larger Phones and Small Tablets Portrait */
+@media (max-width: 600px) {
+    #hero {
+        padding: 20px 0;        
+        margin-bottom: 15px; /* Reduced margin for hero */    
+    }
+    #hero #TITLE h1 {
+        margin-bottom: 0.3em;    
+    }
+    h1 { font-size: 2rem; }
+    .page-title-section h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; } /* Consistent h2 sizing */
+    .drawing-info h2 { font-size: 1.3rem; }
+    .about-me-item .drawing-info h2 { font-size: 1.4rem; }
+}
+
+
+/* Smaller Phones */
 @media (max-width: 480px) {
     main {
-        padding: 0 15px;
+        padding: 0 15px; /* Minimal padding */
     }
     h1 { font-size: 1.8rem; }
     .page-title-section h1 { font-size: 1.6rem; }
@@ -642,11 +694,13 @@ img {
     .drawing-info h2 { font-size: 1.2rem; }
     .about-me-item .drawing-info h2 { font-size: 1.3rem; }
 
-
-    #logoimg {
-        height: 45px;
+    #logoimg { /* Logo size for very small screens */
+        height: 40px;
     }
-    #dropdown-menu {
+     #siteheader {
+        height: 60px;
+    }
+    #dropdown-menu { /* Smaller dropdown menu */
         min-width: 160px;
         padding: 10px 20px;
     }
@@ -656,13 +710,13 @@ img {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Even smaller grid items */
         gap: 15px;
     }
 
-    #overview .image-container {
-        width: 90%;
-        max-width: 300px;
+    #overview .image-container { /* Ensure overview image isn't too large */
+        width: 90%; /* Percentage based for small screens */
+        max-width: 300px; /* Cap max width */
     }
     .line-divider {
         width: 80px;
@@ -670,74 +724,73 @@ img {
     }
 }
 
+/* Contact Form Section */
 #contact-section {
-   
-    font-family: 'Poppins', sans-serif;
-    max-width: 550px;
-    margin: 0 auto;
-
+    font-family: 'Poppins', sans-serif; /* Ensure consistent font */
+    max-width: 550px; /* Max width of the contact section */
+    margin: 0 auto 65px auto; /* Centered with bottom margin */
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 15px;
-    margin-bottom:65px;
-    align-items: center;
-  }
-  
-  #contact-section h1{
-    align-self: flex-start;
-  }
-  
-  
-  #myform {
+    align-items: center; /* Center title if it were part of this flex */
+}
+ 
+#contact-section h1 { /* Title for contact section */
+    align-self: flex-start; /* Align to the start of the flex container */
+    /* General h1 styles will apply, or add specific ones here */
+}
+ 
+#myform { /* The form itself */
     background-color: #ffffff;
     padding: 2rem 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(74, 128, 192, 0.15);
-    width: 100%;
-    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(74, 128, 192, 0.15); /* Softer shadow */
+    width: 100%; /* Full width of its container (#contact-section) */
+    max-width: 500px; /* But not exceeding 500px */
     box-sizing: border-box;
-  }
-  
-  #myform h2 {
-    color: #5C5470;
+}
+ 
+#myform h2 { /* Title inside the form */
+    color: #5C5470; /* Form-specific title color */
     margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Form-specific title size */
     text-align: center;
-  }
-  
-  #myform input {
+    margin-top: 0; /* Reset margin if needed */
+}
+ 
+#myform label { /* Changed from input to label for better practice */
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Space below label group */
     color: #3D3D3D;
     font-weight: 500;
-  }
-  
-  #myform input,
-  #myform textarea {
+}
+ 
+#myform input,
+#myform textarea {
     width: 100%;
     padding: 0.75rem 1rem;
-    margin-top: 0.25rem;
+    margin-top: 0.25rem; /* Space between label and input */
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #F8FAFC;
     font-size: 1rem;
     color: #3D3D3D;
     transition: border-color 0.3s ease;
-  }
-  
-  #myform input:focus,
-  #myform textarea:focus {
-    border-color: #4A80C0;
+}
+ 
+#myform input:focus,
+#myform textarea:focus {
+    border-color: #4A80C0; /* Highlight on focus */
     outline: none;
-  }
-  
-  #myform textarea {
-    resize: vertical;
+}
+ 
+#myform textarea {
+    resize: vertical; /* Allow vertical resize */
     min-height: 120px;
-  }
-  
-  #myform button {
+}
+ 
+#myform button {
     background-color: #4A80C0;
     color: white;
     border: none;
@@ -746,27 +799,28 @@ img {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%;
-    margin-top: 1rem;
-  }
-  
-  #myform button:hover {
-    background-color: #A3A1D4;
-  }
+    width: 100%; /* Full width button */
+    margin-top: 1rem; /* Space above button */
+}
+ 
+#myform button:hover {
+    background-color: #3a6699; /* Darker shade on hover */
+}
 
-  #nameform {
+/* Form Validation Animations */
+#nameform { /* Assuming this is a container for a form field or error message */
     transition-duration: 0.3s;
     position: relative;
-    color:black;
-  }
-  
-  .shakeit {
+    color:black; /* Default color */
+}
+ 
+.shakeit { /* Class for shaking effect on error */
     animation: shake 0.5s;
     animation-iteration-count: 1;
-    color: red;
-  }
-  
-  @keyframes shake {
+    color: red !important; /* Error color */
+}
+ 
+@keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
     20% { transform: translate(-3px, 0px) rotate(1deg); }
@@ -778,4 +832,43 @@ img {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
+}
+
+/* GIF Styles (decorative) */
+.gif { /* Container for a GIF */
+    width: 100vw;
+    height:auto; /* Auto height based on content */
+    position:fixed;
+    z-index:10000; /* Very high z-index */
+    border: none;
+    box-shadow: none;
+    bottom:-4px; /* Precise positioning */
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+.gifimg { /* The GIF image itself */
+    border:none;
+    width:100%;
+    box-shadow: none;
+    height:auto;
+    pointer-events: none; /* Also non-interactive */
+}
+
+/* Another Shake Animation */
+@keyframes shakec {
+    0% { transform: translate(0, 0); }
+    30% { transform: translate(0, 0); }
+    40% { transform: translate(4px, 0); }
+    70% { transform: translate(-4px, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+.shakec { /* Class to apply this shake animation */
+    animation: shakec 0.3s ease-in-out;
+}
+
+/* Fade Out Utility */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}

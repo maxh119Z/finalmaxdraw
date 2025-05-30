@@ -13,6 +13,45 @@ const firebaseConfig = {
     measurementId: "G-BSGM41DVS7"
   };
 
+function preloadImages(callback) {
+  var imageUrls;
+  
+  imageUrls = ["images/point2.gif"]
+  var loadedImagesCount = 0;
+  var totalImages = imageUrls.length;
+
+  function loadImage(url) {
+    if (!url) {
+      loadedImagesCount++;
+      if (loadedImagesCount === totalImages - 1) {
+        callback()
+      }
+      return;
+    }
+    var img = new Image();
+    img.src = url;
+
+    img.onload = function() {
+      loadedImagesCount++;
+      if (loadedImagesCount === totalImages) {
+        callback();
+      }
+    };
+
+    img.onerror = function() {
+      console.error("Error loading image: " + url);
+      loadedImagesCount++;
+      if (loadedImagesCount === totalImages) {
+        callback();
+      }
+    };
+  }
+
+  imageUrls.forEach(function(url) {
+    loadImage(url);
+  });
+}
+
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const db = firebase.firestore();
@@ -102,7 +141,38 @@ if (window.location.href.substring(window.location.href.lastIndexOf('/') + 1) ==
 
 document.addEventListener("DOMContentLoaded", event => {
     const app = firebase.app();
-    document.querySelector('body').style.opacity = 1;
+    preloadImages(aftergif);
+    function aftergif(){
+      if (document.title == "Max's Drawings"){
+        const gifDiv = document.createElement('div');
+      gifDiv.className = 'gif'; 
+      const gifImg = document.createElement('img');
+      gifImg.style.transform = 'scaleX(-1)';
+      gifImg.src = 'images/point2.gif?t=' + new Date().getTime();
+      gifImg.className = 'gifimg';
+    
+      gifImg.style.border = "none";
+      gifDiv.appendChild(gifImg);
+      if (isMobile.any() || window.self != window.top){
+        gifImg.style.width = "150%";
+      }
+      document.body.appendChild(gifDiv);
+
+      setTimeout(function() {  
+   
+          gifImg.remove();
+          gifDiv.remove();
+ 
+      }, 2300);
+
+      setTimeout(function(){
+        let container = document.getElementById("recent8");
+        container.classList.add('shakec');
+        setTimeout(function(){container.classList.remove('shakec')},300)
+      },1744)
+
+      }
+          document.querySelector('body').style.opacity = 1;
 
     if(isMobile.any() || window.self != window.top){
 
@@ -169,6 +239,7 @@ document.addEventListener("DOMContentLoaded", event => {
         })
         
 
+    }
     }
     
     
@@ -243,4 +314,11 @@ function updateUI(user) {
     }
   }
 
-  
+  document.body.addEventListener('click', function (event) {
+
+    if (!event.target.closest('.dropdown')) {
+      toggleMenu()
+    }
+
+    
+  });

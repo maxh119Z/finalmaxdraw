@@ -107,7 +107,7 @@
     <script defer src="script.js"></script>
     <script>
 
-        if (typeof transitionToPage !== 'function') { function transitionToPage(url) { document.body.style.opacity = '0'; setTimeout(() => { window.location.href = url; }, 200); } }
+      
      
         if (typeof toggleMenu !== 'function') { function toggleMenu() { const m = document.getElementById('menu-toggle'), d = document.getElementById('dropdown-menu'); m.classList.toggle('open'); d.style.display = m.classList.contains('open') ? 'flex' : 'none'; const b = m.querySelectorAll('.bar'); b.forEach(e => e.classList.add('no-transition')); setTimeout(() => { b.forEach(e => e.classList.remove('no-transition')); }, 10); } }
         const cI = document.querySelectorAll('.clickable'), fO = document.getElementById('fullpage'); if (fO) { cI.forEach(i => { i.addEventListener('click', function() { fO.style.backgroundImage = 'url(' + this.src + ')'; fO.style.display = 'block'; }); }); }
