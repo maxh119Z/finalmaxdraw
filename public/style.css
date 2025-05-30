@@ -188,7 +188,7 @@ img {
 
 #menu-toggle.open #bar2 {
     opacity: 0;
-    transform: translateX(-100%);
+    /* transform: translateX(-100%); */
 }
 
 #menu-toggle.open #bar3 {
@@ -756,7 +756,7 @@ img {
 
   #nameform {
     transition-duration: 0.3s;
-    position: relative; /* important for transform to work visually */
+    position: relative;
     color:black;
   }
   

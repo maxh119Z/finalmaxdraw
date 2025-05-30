@@ -54,7 +54,7 @@
         <section class="about-content">
 
             <article class="drawing-item about-me-item"> <div class="drawing-info"> <h2>Max Zhang</h2>
-                    <p>Hi, I am Max and I am a sophomore at Irvington High School. I like Badminton, Coding, Drawing, Rock Climbing, violin, etc. Let me know what I can improve about this website below! Just login and your suggestions will be emailed to me automatically.</p>
+                    <p>Hi, I am Max and I am a sophomore at Irvington High School. I like Badminton, Coding, Drawing, Rock Climbing, violin, etc. <b>Let me know what I can improve about this website below!</b> Just login and your suggestions will be emailed to me automatically.</p>
                 </div>
                 <div class="image-container">
                     <img src="images/maxpicture.jpg" alt="Photo of Max Zhang">
@@ -75,17 +75,18 @@
              </section> </main>
 
     <footer id="sitefooter">
-        <p>&copy; <span id="copyright-year"></span> Max's Drawings. All Rights Reserved.</p>
+        <p>Max's Drawings. Send suggestions/comments in this <a href = "aboutus.html"><u>section!</u></a></p>
         
         <p>Contact: <a href="mailto:maxhzhang119@gmail.com">maxhzhang119@gmail.com</a>
             <a href="https://www.instagram.com/maxzhang19/" aria-label="Follow me on Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://github.com/maxh119Z" aria-label="Check out my GitHub"><i class="fab fa-github"></i></a>
             <a href="https://www.facebook.com/max.zhang.760398/" aria-label="See me on Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@maxcodes1" aria-label="Youtbue"><i class="fab fa-youtube"></i></a>
         </p>
     </footer>
     <script defer src="script.js"></script>
     <script>
-        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+       
         if (typeof transitionToPage !== 'function') { function transitionToPage(url) { document.body.style.opacity = '0'; setTimeout(() => { window.location.href = url; }, 200); } }
         if (typeof toggleMenu !== 'function') { function toggleMenu() { const m = document.getElementById('menu-toggle'), d = document.getElementById('dropdown-menu'); m.classList.toggle('open'); d.style.display = m.classList.contains('open') ? 'flex' : 'none'; const b = m.querySelectorAll('.bar'); b.forEach(e => e.classList.add('no-transition')); setTimeout(() => { b.forEach(e => e.classList.remove('no-transition')); }, 10); } }
        
