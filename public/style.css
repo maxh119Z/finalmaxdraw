@@ -25,7 +25,7 @@ body {
 
 main {
     flex-grow: 1;
-    padding: 0 20px; /* Default padding, will be overridden by breakpoints */
+    padding: 0 20px;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
@@ -73,7 +73,6 @@ img {
     display: block;
 }
 
-/* Header Styles */
 #siteheader {
     position: sticky;
     top: 0;
@@ -154,14 +153,13 @@ img {
 }
 
 #siteheader-content a.login::after {
-    display: none; /* No underline for login button */
+    display: none;
 }
 
-/* Hamburger Menu Styles */
 #dropdiv {
-    display: none; /* Hidden by default, shown on smaller screens */
+    display: none;
     position: relative;
-    margin-left: auto; /* Pushes hamburger to the right */
+    margin-left: auto;
 }
 
 #menu-toggle {
@@ -171,8 +169,8 @@ img {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 1001; /* Above dropdown background */
-    padding: 2px 0; /* Small padding for visual balance */
+    z-index: 1001;
+    padding: 2px 0;
 }
 
 .bar {
@@ -195,21 +193,21 @@ img {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.no-transition { /* Utility class to disable transitions temporarily */
+.no-transition {
     transition: none !important;
 }
 
 #dropdown-menu {
-    display: none; /* Hidden by default */
+    display: none;
     flex-direction: column;
     position: absolute;
-    top: calc(100% + 10px); /* Position below hamburger icon */
+    top: calc(100% + 10px);
     right: 0;
     background-color: #ffffff;
     padding: 15px 25px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1000;
     min-width: 200px;
 }
 
@@ -230,7 +228,6 @@ img {
     color: #6b7a8f;
 }
 
-/* Hero Section */
 #hero {
     text-align: center;
     padding: 40px 0;
@@ -250,14 +247,13 @@ img {
 }
 
 #hero #titledescription h2 {
-    font-size: 1.4rem; /* Specific size for hero subtitle */
+    font-size: 1.4rem;
     font-weight: 400;
     color: #6c757d;
     margin-top: 0;
     margin-bottom: 30px;
 }
 
-/* Overview Section */
 #overview {
     display: flex;
     flex-wrap: wrap;
@@ -270,12 +266,12 @@ img {
 #overview .image-container {
     position: relative;
     width: clamp(280px, 40vw, 400px);
-    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-shrink: 0; /* Prevent shrinking if text is long */
+    flex-shrink: 0;
 }
 
 #overview .image-container img {
@@ -312,7 +308,7 @@ img {
 
 #overview-text {
     flex-grow: 1;
-    max-width: 650px; /* Prevents text line from becoming too long */
+    max-width: 650px;
 }
 
 #overview-text #text1 {
@@ -320,7 +316,6 @@ img {
     color: #495057;
 }
 
-/* Category Gallery Section */
 #category-gallery {
     padding: 30px 0;
     margin-bottom: 50px;
@@ -338,7 +333,7 @@ img {
 
 #category-gallery .image-container.card {
     position: relative;
-    aspect-ratio: 3 / 4; /* Portrait aspect ratio for cards */
+    aspect-ratio: 3 / 4;
     overflow: hidden;
     border-radius: 10px;
     background: #fff;
@@ -363,7 +358,6 @@ img {
     transform: scale(1.05);
 }
 
-/* Page Title Section (for category pages, etc.) */
 .page-title-section {
     text-align: center;
     padding: 40px 0 20px;
@@ -384,7 +378,6 @@ img {
     margin-bottom: 1.5em;
 }
 
-/* Drawing List (for category pages) */
 .drawing-list {
     display: flex;
     flex-direction: column;
@@ -394,23 +387,23 @@ img {
 
 .drawing-item {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on very narrow screens if needed */
+    flex-wrap: wrap;
     align-items: center;
     gap: 30px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    overflow: hidden; /* Contain box shadow */
+    overflow: hidden;
 }
 
-.drawing-item.item-reverse { /* For alternating layout */
+.drawing-item.item-reverse {
     flex-direction: row-reverse;
 }
 
 .drawing-info {
-    flex: 1; /* Takes available space */
-    min-width: 250px; /* Minimum width before wrapping or shrinking too much */
+    flex: 1;
+    min-width: 250px;
     padding: 10px;
 }
 
@@ -419,7 +412,7 @@ img {
     color: #4a4e69;
     margin-top: 0;
     margin-bottom: 0.5em;
-    text-align: left; /* Default to left */
+    text-align: left;
 }
 
 .drawing-info p {
@@ -427,7 +420,7 @@ img {
     color: #495057;
     line-height: 1.6;
     margin-bottom: 0.8em;
-    text-align: left; /* Default to left */
+    text-align: left;
 }
 
 .drawing-date {
@@ -438,9 +431,9 @@ img {
 }
 
 .drawing-item .image-container {
-    flex: 1; /* Takes available space */
-    min-width: 250px; /* Minimum width */
-    max-width: 500px; /* Max width for the image */
+    flex: 1;
+    min-width: 250px;
+    max-width: 500px;
     position: relative;
     border-radius: 8px;
     overflow: hidden;
@@ -449,9 +442,9 @@ img {
 
 .drawing-item .image-container img {
     width: 100%;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
     display: block;
-    border-radius: 8px; /* Match container's radius */
+    border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -460,16 +453,14 @@ img {
    transform: scale(1.03);
 }
 
-/* About Me Section */
-.about-content { /* Container for about me items if there are multiple */
+.about-content {
     display: flex;
     flex-direction: column;
     gap: 40px;
     margin-bottom: 60px;
 }
 
-.about-me-item { /* Reuses some drawing-item structure but can be customized */
-    /* Similar to .drawing-item, can add specific styles if needed */
+.about-me-item {
 }
 
 .about-me-item .drawing-info h2 {
@@ -482,23 +473,22 @@ img {
     text-align: left;
 }
 
-.about-me-item .image-container { /* Specific for about me page image */
-    max-height: 400px; /* Constrain height */
-    align-self: center; /* Center if layout becomes column */
+.about-me-item .image-container {
+    max-height: 400px;
+    align-self: center;
 }
 
 .about-me-item .image-container img {
-    object-fit: cover; /* Cover the constrained area */
-    max-height: 400px; /* Ensure img respects container height */
+    object-fit: cover;
+    max-height: 400px;
 }
 
-/* Footer */
 #sitefooter {
     background-color: #343a40;
     color: #adb5bd;
     padding: 30px 20px;
     text-align: center;
-    margin-top: auto; /* Pushes footer to bottom if content is short */
+    margin-top: auto;
     font-size: 0.9rem;
     width: 100%;
 }
@@ -522,7 +512,6 @@ img {
     color: #ffffff;
 }
 
-/* Full Page Image Viewer */
 #fullpage {
     position: fixed;
     top: 0;
@@ -533,17 +522,14 @@ img {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    display: none; /* Shown via JavaScript */
-    z-index: 2000; /* Above everything else */
+    display: none;
+    z-index: 2000;
     cursor: pointer;
 }
 
-/* Media Queries for Responsiveness */
-
-/* Larger Tablets and Small Desktops (e.g., iPad landscape, smaller laptops) */
 @media (max-width: 992px) {
     main {
-        padding: 0 25px; /* Slightly reduced padding */
+        padding: 0 25px;
     }
     h1 { font-size: 2.5rem; }
     .page-title-section h1 { font-size: 2.3rem; }
@@ -551,109 +537,107 @@ img {
     .drawing-info h2 { font-size: 1.5rem; }
     .about-me-item .drawing-info h2 { font-size: 1.7rem; }
 
-    /* Header adjustments for this breakpoint for better fit */
     #siteheader {
         padding: 0 20px;
         height: 70px;
     }
     #siteheader-title {
-        font-size: 1.4rem; /* Slightly smaller title */
+        font-size: 1.4rem;
         gap: 8px;
     }
     #logoimg {
-        height: 50px; /* Slightly smaller logo */
+        height: 50px;
     }
     #siteheader-content {
-        gap: 20px; /* Reduce gap between nav items */
+        gap: 20px;
     }
     #siteheader-content a {
-        font-size: 1rem; /* Slightly smaller nav links */
+        font-size: 1rem;
     }
     #siteheader-content a.login {
-        padding: 7px 12px; /* Adjust login button padding */
+        padding: 7px 12px;
     }
 
     #overview {
-        flex-direction: column; /* Stack image and text */
+        flex-direction: column;
         text-align: center;
     }
     #overview .image-container {
-        width: clamp(280px, 60vw, 450px); /* Adjust image size for stacked layout */
+        width: clamp(280px, 60vw, 450px);
     }
     #overview-text {
-        max-width: 100%; /* Allow text to use full width when stacked */
+        max-width: 100%;
         margin-top: 20px;
     }
 }
 
-/* Standard Tablets (e.g., iPad portrait) */
 @media (max-width: 768px) {
     body {
-        line-height: 1.6; /* Slightly adjust line height for smaller screens */
+        line-height: 1.6;
     }
     main {
-        padding: 0 20px; /* Further reduce padding */
+        padding: 0 20px;
     }
-    h1 { font-size: 2.2rem; } /* Further reduce font sizes */
+    h1 { font-size: 2.2rem; }
     .page-title-section h1 { font-size: 2rem; }
     h2 { font-size: 1.5rem; }
     .drawing-info h2 { font-size: 1.4rem; }
     .about-me-item .drawing-info h2 { font-size: 1.5rem; }
 
     #siteheader {
-        padding: 0 20px; /* Consistent with 992px or further adjust if needed */
-        height: 65px; /* Reduce header height */
+        padding: 0 20px;
+        height: 65px;
     }
     #logoimg {
-        height: 45px; /* Smaller logo */
+        height: 45px;
     }
 
     #siteheader-content {
-        display: none; /* Hide full navigation */
+        display: none;
     }
     #dropdiv {
-        display: flex; /* Show hamburger menu icon */
+        display: flex;
         align-items: center;
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Smaller grid items */
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
         gap: 20px;
     }
     #category-gallery .image-container.card {
-        aspect-ratio: 1 / 1; /* Square cards for smaller screens */
+        aspect-ratio: 1 / 1;
     }
 
     .drawing-list {
-        gap: 40px; /* Reduce gap between drawing items */
+        gap: 40px;
     }
     .drawing-item,
     .drawing-item.item-reverse {
-        flex-direction: column; /* Stack image and text */
-        align-items: stretch; /* Make items take full width */
+        flex-direction: column;
+        align-items: stretch;
         padding: 15px;
     }
     .drawing-item .image-container,
     .drawing-item.item-reverse .image-container {
-        order: -1; /* Image on top */
-        max-width: 100%; /* Image takes full width of its container */
+        order: -1;
+        max-width: 100%;
         margin-bottom: 20px;
     }
     .drawing-info {
-        text-align: center; /* Center text content */
+        text-align: center;
     }
     .drawing-info h2, .drawing-info p, .drawing-date {
-        text-align: center; /* Ensure all text inside info is centered */
+        text-align: center;
     }
 
-    .about-me-item, /* Also stack for about me section */
+    .about-me-item,
     .about-me-item.item-reverse {
         flex-direction: column;
         align-items: stretch;
     }
     .about-me-item .image-container {
         order: -1;
-        max-width: 70%; /* Image slightly smaller than full width, centered */
+        max-width: 70%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
@@ -666,27 +650,25 @@ img {
     }
 }
 
-/* Larger Phones and Small Tablets Portrait */
 @media (max-width: 600px) {
     #hero {
         padding: 20px 0;        
-        margin-bottom: 15px; /* Reduced margin for hero */    
+        margin-bottom: 15px;    
     }
     #hero #TITLE h1 {
         margin-bottom: 0.3em;    
     }
     h1 { font-size: 2rem; }
     .page-title-section h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.4rem; } /* Consistent h2 sizing */
+    h2 { font-size: 1.4rem; }
     .drawing-info h2 { font-size: 1.3rem; }
     .about-me-item .drawing-info h2 { font-size: 1.4rem; }
 }
 
 
-/* Smaller Phones */
 @media (max-width: 480px) {
     main {
-        padding: 0 15px; /* Minimal padding */
+        padding: 0 15px;
     }
     h1 { font-size: 1.8rem; }
     .page-title-section h1 { font-size: 1.6rem; }
@@ -694,13 +676,13 @@ img {
     .drawing-info h2 { font-size: 1.2rem; }
     .about-me-item .drawing-info h2 { font-size: 1.3rem; }
 
-    #logoimg { /* Logo size for very small screens */
+    #logoimg {
         height: 40px;
     }
      #siteheader {
         height: 60px;
     }
-    #dropdown-menu { /* Smaller dropdown menu */
+    #dropdown-menu {
         min-width: 160px;
         padding: 10px 20px;
     }
@@ -710,13 +692,13 @@ img {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Even smaller grid items */
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
         gap: 15px;
     }
 
-    #overview .image-container { /* Ensure overview image isn't too large */
-        width: 90%; /* Percentage based for small screens */
-        max-width: 300px; /* Cap max width */
+    #overview .image-container {
+        width: 90%;
+        max-width: 300px;
     }
     .line-divider {
         width: 80px;
@@ -724,44 +706,42 @@ img {
     }
 }
 
-/* Contact Form Section */
 #contact-section {
-    font-family: 'Poppins', sans-serif; /* Ensure consistent font */
-    max-width: 550px; /* Max width of the contact section */
-    margin: 0 auto 65px auto; /* Centered with bottom margin */
+    font-family: 'Poppins', sans-serif;
+    max-width: 550px;
+    margin: 0 auto 65px auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 15px;
-    align-items: center; /* Center title if it were part of this flex */
+    align-items: center;
 }
  
-#contact-section h1 { /* Title for contact section */
-    align-self: flex-start; /* Align to the start of the flex container */
-    /* General h1 styles will apply, or add specific ones here */
+#contact-section h1 {
+    align-self: flex-start;
 }
  
-#myform { /* The form itself */
+#myform {
     background-color: #ffffff;
     padding: 2rem 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(74, 128, 192, 0.15); /* Softer shadow */
-    width: 100%; /* Full width of its container (#contact-section) */
-    max-width: 500px; /* But not exceeding 500px */
+    box-shadow: 0 4px 12px rgba(74, 128, 192, 0.15);
+    width: 100%;
+    max-width: 500px;
     box-sizing: border-box;
 }
  
-#myform h2 { /* Title inside the form */
-    color: #5C5470; /* Form-specific title color */
+#myform h2 {
+    color: #5C5470;
     margin-bottom: 1.5rem;
-    font-size: 1.8rem; /* Form-specific title size */
+    font-size: 1.8rem;
     text-align: center;
-    margin-top: 0; /* Reset margin if needed */
+    margin-top: 0;
 }
  
-#myform label { /* Changed from input to label for better practice */
+#myform label {
     display: block;
-    margin-bottom: 1rem; /* Space below label group */
+    margin-bottom: 1rem;
     color: #3D3D3D;
     font-weight: 500;
 }
@@ -770,7 +750,7 @@ img {
 #myform textarea {
     width: 100%;
     padding: 0.75rem 1rem;
-    margin-top: 0.25rem; /* Space between label and input */
+    margin-top: 0.25rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #F8FAFC;
@@ -781,12 +761,12 @@ img {
  
 #myform input:focus,
 #myform textarea:focus {
-    border-color: #4A80C0; /* Highlight on focus */
+    border-color: #4A80C0;
     outline: none;
 }
  
 #myform textarea {
-    resize: vertical; /* Allow vertical resize */
+    resize: vertical;
     min-height: 120px;
 }
  
@@ -799,25 +779,24 @@ img {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%; /* Full width button */
-    margin-top: 1rem; /* Space above button */
+    width: 100%;
+    margin-top: 1rem;
 }
  
 #myform button:hover {
-    background-color: #3a6699; /* Darker shade on hover */
+    background-color: #3a6699;
 }
 
-/* Form Validation Animations */
-#nameform { /* Assuming this is a container for a form field or error message */
+#nameform {
     transition-duration: 0.3s;
     position: relative;
-    color:black; /* Default color */
+    color:black;
 }
  
-.shakeit { /* Class for shaking effect on error */
+.shakeit {
     animation: shake 0.5s;
     animation-iteration-count: 1;
-    color: red !important; /* Error color */
+    color: red !important;
 }
  
 @keyframes shake {
@@ -834,27 +813,25 @@ img {
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-/* GIF Styles (decorative) */
-.gif { /* Container for a GIF */
+.gif {
     width: 100vw;
-    height:auto; /* Auto height based on content */
+    height:auto;
     position:fixed;
-    z-index:10000; /* Very high z-index */
+    z-index:10000;
     border: none;
     box-shadow: none;
-    bottom:-4px; /* Precise positioning */
-    pointer-events: none; /* Allows clicks to pass through */
+    bottom:-4px;
+    pointer-events: none;
 }
 
-.gifimg { /* The GIF image itself */
+.gifimg {
     border:none;
     width:100%;
     box-shadow: none;
     height:auto;
-    pointer-events: none; /* Also non-interactive */
+    pointer-events: none;
 }
 
-/* Another Shake Animation */
 @keyframes shakec {
     0% { transform: translate(0, 0); }
     30% { transform: translate(0, 0); }
@@ -863,11 +840,10 @@ img {
     100% { transform: translate(0, 0); }
 }
 
-.shakec { /* Class to apply this shake animation */
+.shakec {
     animation: shakec 0.3s ease-in-out;
 }
 
-/* Fade Out Utility */
 .fade-out {
     opacity: 0;
     transition: opacity 0.5s ease;
