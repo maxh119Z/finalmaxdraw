@@ -152,9 +152,7 @@ img {
     color: #ffffff;
 }
 
-#siteheader-content a.login::after {
-    display: none;
-}
+
 
 #dropdiv {
     display: none;
