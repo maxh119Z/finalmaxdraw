@@ -660,7 +660,7 @@ img {
     }
     #overview {
     flex-direction: column; /* Stack image and text vertically */
-    border: 10px solid black;
+
     align-items: center; /* Center items horizontally now that they are stacked */
     gap: 25px; /* Adjust gap for stacked layout */
 }
