@@ -550,6 +550,7 @@ img {
         height: 50px;
     }
     #siteheader-content {
+        display:flex;
         gap: 20px;
     }
     #siteheader-content a {
